@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Operations Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <h2>CloudOps Dashboard</h2>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/deployments">Deployments</a>
+      <a href="/monitoring">Monitoring</a>
+      <a href="/runbooks">Runbooks</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h1>Production Operations Dashboard</h1>
+      <p>Production Environment | All systems operational</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Service Health</h3>
+        <p class="green">● Authentication API - Healthy</p>
+        <p class="green">● User Management - Healthy</p>
+        <p class="green">● Notification Service - Healthy</p>
+        <p class="green">● Payment Service - Healthy</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Status</h3>
+        <p>Docker Registry: Connected</p>
+        <p>Kubernetes Cluster: Running</p>
+        <p>Ingress Controller: Healthy</p>
+        <p>Argo CD: Synced</p>
+      </div>
+
+      <div class="card">
+        <h3>Today’s Metrics</h3>
+        <p><strong>99.98%</strong> Availability</p>
+        <p><strong>8</strong> Deployments</p>
+        <p><strong>12</strong> Incidents Resolved</p>
+        <p><strong>2m 40s</strong> Average Response Time</p>
+      </div>
+
+      <div class="card">
+        <h3>Recent Activity</h3>
+        <p>✓ Docker image published</p>
+        <p>✓ GitHub Actions workflow completed</p>
+        <p>✓ Helm release upgraded</p>
+        <p>✓ Argo CD synchronization successful</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

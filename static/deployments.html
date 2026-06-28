@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deployments</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <h2>CloudOps Dashboard</h2>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/deployments">Deployments</a>
+      <a href="/monitoring">Monitoring</a>
+      <a href="/runbooks">Runbooks</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Deployment History</h1>
+
+    <table>
+      <tr>
+        <th>Version</th>
+        <th>Environment</th>
+        <th>Status</th>
+        <th>Deployed By</th>
+      </tr>
+      <tr>
+        <td>v1.0.3</td>
+        <td>Production</td>
+        <td class="green">Successful</td>
+        <td>GitHub Actions</td>
+      </tr>
+      <tr>
+        <td>v1.0.2</td>
+        <td>Staging</td>
+        <td class="green">Successful</td>
+        <td>Argo CD</td>
+      </tr>
+      <tr>
+        <td>v1.0.1</td>
+        <td>Development</td>
+        <td class="green">Successful</td>
+        <td>Helm</td>
+      </tr>
+    </table>
+  </main>
+</body>
+</html>

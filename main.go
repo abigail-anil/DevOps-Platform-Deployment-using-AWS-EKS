@@ -5,32 +5,21 @@ import (
 	"net/http"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	// Render the home html page from static folder
-	http.ServeFile(w, r, "static/home.html")
-}
-
-func coursePage(w http.ResponseWriter, r *http.Request) {
-	// Render the course html page
-	http.ServeFile(w, r, "static/courses.html")
-}
-
-func aboutPage(w http.ResponseWriter, r *http.Request) {
-	// Render the about html page
-	http.ServeFile(w, r, "static/about.html")
-}
-
-func contactPage(w http.ResponseWriter, r *http.Request) {
-	// Render the contact html page
-	http.ServeFile(w, r, "static/contact.html")
+func servePage(filename string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "static/"+filename)
+	}
 }
 
 func main() {
+	http.HandleFunc("/", servePage("dashboard.html"))
+	http.HandleFunc("/dashboard", servePage("dashboard.html"))
+	http.HandleFunc("/deployments", servePage("deployments.html"))
+	http.HandleFunc("/monitoring", servePage("monitoring.html"))
+	http.HandleFunc("/runbooks", servePage("runbooks.html"))
+	http.HandleFunc("/about", servePage("about.html"))
 
-	http.HandleFunc("/home", homePage)
-	http.HandleFunc("/courses", coursePage)
-	http.HandleFunc("/about", aboutPage)
-	http.HandleFunc("/contact", contactPage)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {
